@@ -1,5 +1,7 @@
 package edu.yale.cpsc112_lesson3;
 
+import com.firebase.client.Firebase;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -17,6 +19,8 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Firebase.setAndroidContext(this); 
+        Firebase ref = new Firebase("https://fiery-fire-1683.firebaseio.com/"); //this initializes the unique Firebase url, where data can be viewed
         //Set the initial view of the app to be the stuff we created in activity_main.xml
 		setContentView(R.layout.activity_main);
 		
